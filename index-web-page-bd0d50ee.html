@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>熊猫体育 · 知识库入口说明页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f1f3f4;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1e2a3a;
+      line-height: 1.55;
+      padding: 2rem 1rem;
+    }
+
+    .page-wrap {
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    /* 目录感布局: 主标题区 */
+    .hero-banner {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04), 0 1px 3px rgba(0,0,0,0.03);
+      padding: 2rem 2rem 2.2rem;
+      margin-bottom: 2rem;
+      border: 1px solid #e2e6ea;
+      position: relative;
+    }
+
+    .hero-banner h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #111827;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-banner h1 small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #4b5563;
+      background: #eef2f6;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      border: 1px solid #d1d9e0;
+    }
+
+    .hero-desc {
+      margin-top: 1.2rem;
+      font-size: 1.02rem;
+      max-width: 70ch;
+      color: #2c3e50;
+    }
+
+    .hero-desc a {
+      color: #1f5b9e;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted #9bb8da;
+    }
+
+    .hero-desc a:hover {
+      border-bottom: 2px solid #1f5b9e;
+    }
+
+    /* 卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.02);
+      padding: 1.6rem 1.6rem 1.8rem;
+      border: 1px solid #e3e8ed;
+      transition: box-shadow 0.2s, transform 0.15s;
+    }
+
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transform: translateY(-2px);
+    }
+
+    .card h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      border-left: 4px solid #7fa3c2;
+      padding-left: 0.75rem;
+      margin-bottom: 0.8rem;
+      color: #1f2a3f;
+    }
+
+    .card p, .card li {
+      font-size: 0.95rem;
+      color: #2f3e4e;
+    }
+
+    .card ul {
+      list-style: none;
+      padding-left: 0.2rem;
+    }
+
+    .card li {
+      padding: 0.3rem 0 0.3rem 1.2rem;
+      position: relative;
+    }
+
+    .card li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #6f8da0;
+    }
+
+    .info-highlight {
+      background: #f6f9fc;
+      border-radius: 18px;
+      padding: 0.9rem 1.2rem;
+      border: 1px solid #dce3ea;
+      font-size: 0.92rem;
+      margin-top: 1rem;
+      color: #1f3a4b;
+    }
+
+    .info-highlight a {
+      color: #1a5c8c;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #b6cddf;
+    }
+
+    .info-highlight a:hover {
+      text-decoration-color: #1a5c8c;
+    }
+
+    /* 说明区 + 提示区组合 */
+    .notice-area {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .notice-card {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #e3e8ed;
+      padding: 1.6rem 1.5rem 1.8rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+    }
+
+    .notice-card h3 {
+      font-weight: 500;
+      font-size: 1rem;
+      margin-bottom: 0.8rem;
+      color: #1f2b3a;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .notice-card .badge {
+      background: #dce4ed;
+      padding: 0.1rem 0.7rem;
+      border-radius: 30px;
+      font-size: 0.75rem;
+      color: #1d2c3c;
+      font-weight: 400;
+      border: 1px solid #c5d0db;
+    }
+
+    .notice-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .notice-card a {
+      color: #1d5b8c;
+      text-decoration: none;
+      border-bottom: 1px dotted #a5bed6;
+    }
+
+    .notice-card a:hover {
+      border-bottom: 1px solid #1d5b8c;
+    }
+
+    .faq-mini {
+      background: #ffffff;
+      border-radius: 20px;
+      border: 1px solid #e3e8ed;
+      padding: 1.6rem 1.5rem 1.5rem;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+      margin-bottom: 2rem;
+    }
+
+    .faq-mini h3 {
+      font-weight: 500;
+      font-size: 1.1rem;
+      margin-bottom: 0.9rem;
+      color: #1f2b3a;
+      border-bottom: 1px dashed #d5dee6;
+      padding-bottom: 0.5rem;
+    }
+
+    .faq-item {
+      padding: 0.5rem 0;
+    }
+
+    .faq-item strong {
+      font-weight: 500;
+      color: #1f3b4f;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item p {
+      color: #3b4d5e;
+      font-size: 0.93rem;
+      margin-left: 0.8rem;
+    }
+
+    .faq-item + .faq-item {
+      border-top: 1px solid #e9eef3;
+      margin-top: 0.3rem;
+      padding-top: 0.8rem;
+    }
+
+    .site-footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #5f6f7e;
+      border-top: 1px solid #dae0e6;
+      padding-top: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .site-footer a {
+      color: #2c5779;
+      text-decoration: none;
+    }
+
+    .site-footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* 响应式 */
+    @media (max-width: 700px) {
+      .card-grid, .notice-area {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .hero-banner h1 {
+        font-size: 1.6rem;
+      }
+
+      body {
+        padding: 1rem 0.8rem;
+      }
+
+      .card, .notice-card, .faq-mini {
+        padding: 1.2rem;
+      }
+    }
+
+    @media (max-width: 440px) {
+      .hero-banner h1 small {
+        display: block;
+        margin-top: 0.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- hero 目录入口感 -->
+  <header class="hero-banner">
+    <h1>
+      📚 知识库入口 · 说明页
+      <small>稳定 · 清晰 · 参考向</small>
+    </h1>
+    <div class="hero-desc">
+      本页汇集关于 <a href="https://index-web-pandasports.com">熊猫体育</a> 的方向说明、相关提示和常见问题摘要。
+      内容以整理与索引为目标，便于快速了解整体信息结构，不作为正式服务声明。
+    </div>
+  </header>
+
+  <!-- 卡片：介绍 + 特点 / 场景 -->
+  <div class="card-grid">
+    <div class="card">
+      <h2>📌 介绍</h2>
+      <p>该站点定位为一个围绕体育内容的知识型入口，信息组织偏向目录式陈列。通过分类与说明区，访问者可以快速了解不同版块所对应的背景、用途或注意事项。</p>
+      <p style="margin-top: 0.6rem;">页面结构强调可读性与克制感，不包含繁杂动效或强引导，适合用作参考索引或初步信息查阅。</p>
+    </div>
+    <div class="card">
+      <h2>📋 特点与场景</h2>
+      <ul>
+        <li>分区以卡片和提示区呈现，层级简单</li>
+        <li>适用于初次了解结构或回顾要点</li>
+        <li>内容侧重说明性与稳定性，非营销导向</li>
+        <li>视觉以浅灰背景、细边框、柔和阴影为主</li>
+      </ul>
+      <div class="info-highlight">
+        📎 相关信息：如需要查阅具体分类说明，可参考下方提示区及 FAQ 摘要。 
+        <span style="display: block; margin-top: 0.4rem;">→ 更多内容可经由 <a href="https://index-web-pandasports.com">熊猫体育</a> 页面获取。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 说明区 + 提示区 -->
+  <div class="notice-area">
+    <div class="notice-card">
+      <h3>
+        📖 说明区
+        <span class="badge">使用参考</span>
+      </h3>
+      <p>本说明页本身不代替主站功能，仅作为辅助参考。所有板块命名与分类均基于常规信息整理习惯，可能与实际站点存在差异。建议以主站内容为准。</p>
+      <p>如有疑问或需要更完整的索引，可借助页面内链接前往对应位置。</p>
+    </div>
+    <div class="notice-card">
+      <h3>
+        💡 提示区
+        <span class="badge">阅读建议</span>
+      </h3>
+      <p>页面采用轻量布局，卡片可单独阅读。部分摘要内容仅作概括，详细说明请直接参考主站对应分区。</p>
+      <p>在引用或转述时，建议核实最新信息。本站点不提供即时数据或个性化推荐。</p>
+    </div>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-mini">
+    <h3>❓ FAQ 摘要 · 常见问题</h3>
+    <div class="faq-item">
+      <strong>Q: 这个页面是官网吗？</strong>
+      <p>不是。本页为独立整理的知识库入口说明页，主站为 <a href="https://index-web-pandasports.com">熊猫体育</a>。</p>
+    </div>
+    <div class="faq-item">
+      <strong>Q: 信息是否保持最新？</strong>
+      <p>内容基于创作时的理解整理，可能随时间变化。建议以主站最新版本为准。</p>
+    </div>
+    <div class="faq-item">
+      <strong>Q: 我可以复制或分享这些内容吗？</strong>
+      <p>可以合理引用，但请注明来源并保持原意。商业使用请自行核实相关权利。</p>
+    </div>
+  </div>
+
+  <!-- 相关信息区（额外卡片风格） -->
+  <div style="background: #ffffff; border-radius: 20px; border: 1px solid #e3e8ed; padding: 1.4rem 1.8rem; box-shadow: 0 1px 4px rgba(0,0,0,0.02);">
+    <h3 style="font-weight: 500; font-size: 1rem; margin-bottom: 0.6rem; color: #1f2b3a;">🔗 相关信息</h3>
+    <p style="font-size: 0.95rem; color: #2f3e4e; max-width: 70ch;">
+      如果你需要进一步浏览或确认具体模块，可前往 
+      <a href="https://index-web-pandasports.com">熊猫体育</a> 页面。本说明页仅作为辅助入口，
+      所有分类及提示信息都不构成正式服务条款。建议结合主站内容和实际需求综合判断。
+    </p>
+  </div>
+
+  <footer class="site-footer">
+    <p>知识库说明页 · 仅供信息参考 · 内容以主站 <a href="https://index-web-pandasports.com">熊猫体育</a> 为准</p>
+    <p style="margin-top: 0.3rem;">版本 2025 · 页面结构可随需求调整</p>
+  </footer>
+</div>
+</body>
+</html>
