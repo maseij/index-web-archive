@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 专题索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #f7f9fc;
+      color: #1d2a3a;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrapper {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* hero 横幅 — 极简杂志感 */
+    .hero {
+      margin-bottom: 0.5rem;
+      padding: 2.5rem 0 1.5rem;
+      border-bottom: 1px solid #d9e0e8;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #0f1a2b;
+      margin-bottom: 0.6rem;
+      line-height: 1.2;
+    }
+
+    .hero .subhead {
+      font-size: 1rem;
+      color: #5a6c7d;
+      font-weight: 400;
+      border-left: 3px solid #2b6f9e;
+      padding-left: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    /* 背景说明 — 资料卡片 */
+    .context-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      margin: 2rem 0 2.5rem;
+      box-shadow: 0 4px 12px rgba(0, 20, 40, 0.04);
+      border: 1px solid #e7ecf2;
+    }
+
+    .context-card p {
+      font-size: 0.98rem;
+      color: #2b3e52;
+    }
+
+    .context-card strong {
+      color: #1a3a5a;
+      font-weight: 500;
+    }
+
+    /* 正文内容区 */
+    .section-block {
+      margin-bottom: 2.8rem;
+    }
+
+    .section-block h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      color: #0f1a2b;
+      margin-bottom: 0.9rem;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 0.4rem;
+    }
+
+    .section-block h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #1d3b55;
+      margin: 1.6rem 0 0.6rem;
+    }
+
+    .section-block p {
+      margin-bottom: 1.35rem;
+      font-size: 1.02rem;
+      color: #2a3d50;
+    }
+
+    .section-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .inline-link {
+      color: #1d5a84;
+      text-decoration: none;
+      border-bottom: 1px solid #b6cbd9;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .inline-link:hover {
+      color: #0a3251;
+      border-bottom-color: #0a3251;
+    }
+
+    /* 特点卡片网格（变体：极简双列） */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      margin: 1.8rem 0;
+    }
+
+    .feature-item {
+      background: #ffffff;
+      border: 1px solid #e5ebf2;
+      border-radius: 10px;
+      padding: 1.4rem 1.2rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .feature-item:hover {
+      box-shadow: 0 8px 18px rgba(0, 20, 40, 0.03);
+    }
+
+    .feature-item .num {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #74889c;
+      letter-spacing: 0.3px;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-item h4 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: #142b40;
+      margin-bottom: 0.4rem;
+    }
+
+    .feature-item p {
+      font-size: 0.92rem;
+      color: #3e5568;
+      margin-bottom: 0;
+    }
+
+    /* 引用 / 资料摘录 */
+    .quote-block {
+      background: #f1f5fa;
+      border-radius: 12px;
+      padding: 1.6rem 2rem;
+      margin: 2rem 0 2.5rem;
+      font-style: normal;
+      border-left: 4px solid #2b6f9e;
+    }
+
+    .quote-block p {
+      font-size: 0.98rem;
+      color: #1f3347;
+      margin-bottom: 0.6rem;
+    }
+
+    .quote-block .source {
+      font-size: 0.85rem;
+      color: #617b92;
+    }
+
+    /* 尾页访问提示 */
+    .footer-note {
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid #dce3ec;
+      text-align: left;
+    }
+
+    .footer-note p {
+      font-size: 0.96rem;
+      color: #3b5368;
+      margin-bottom: 0.3rem;
+    }
+
+    .footer-note .small-meta {
+      font-size: 0.82rem;
+      color: #74889c;
+      margin-top: 0.6rem;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 600px) {
+      .wrapper {
+        padding: 2rem 1.2rem 4rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .context-card {
+        padding: 1.3rem 1.2rem;
+      }
+      .quote-block {
+        padding: 1.2rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .section-block h2 {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <!-- hero 横幅 -->
+    <header class="hero">
+      <h1>爱游戏 · 资料索引</h1>
+      <div class="subhead">移动游戏信息整理 · 专题归档</div>
+    </header>
+
+    <!-- 背景说明：从资料积累切入 -->
+    <div class="context-card">
+      <p><strong>关于本专题</strong> —— 移动游戏领域的资讯与产品资料往往分散在不同平台上。作为一项持续的信息整理工作，本页围绕「爱游戏」这一服务品牌，梳理其背景、产品特点以及使用场景，为有兴趣了解的用户提供一份相对完整的索引参考。以下内容基于公开信息与产品文档整理，保持客观与克制。</p>
+    </div>
+
+    <!-- 第一段自然介绍：品牌背景与服务定位 -->
+    <section class="section-block">
+      <h2>1. 从资料整理说起</h2>
+      <p>在移动游戏生态中，品牌与平台的选择往往影响着用户的日常体验。经过对多个渠道的资料比对，<a href="https://chinese-mobile-igame.com" class="inline-link">爱游戏</a> 作为面向中文用户的移动游戏服务站点，其页面结构、内容分类与更新节奏都体现出对特定用户群体的持续服务。从域名与品牌命名来看，它聚焦于“移动”与“游戏”两个核心维度，且长期保持独立运营。</p>
+      <p>资料索引的第一步，是确认信息来源的稳定性。爱游戏在多年运营中，保持了域名与品牌调性的一致性，这在中文游戏类站点中并不多见。以下内容即基于对该站点的长期观察与内容抽样整理而成。</p>
+    </section>
+
+    <!-- 第二段：特点与信息结构 -->
+    <section class="section-block">
+      <h2>2. 内容特点与信息结构</h2>
+      <p>经过对发布内容的分类统计，爱游戏的信息组织方式具有以下特点：</p>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <span class="num">01</span>
+          <h4>分类明确</h4>
+          <p>游戏、应用、资讯等板块划分清晰，便于按需浏览。</p>
+        </div>
+        <div class="feature-item">
+          <span class="num">02</span>
+          <h4>更新持续</h4>
+          <p>内容发布节奏稳定，保持一定频率的信息补充。</p>
+        </div>
+        <div class="feature-item">
+          <span class="num">03</span>
+          <h4>语言统一</h4>
+          <p>全站使用中文，降低阅读门槛，适合中文使用者。</p>
+        </div>
+        <div class="feature-item">
+          <span class="num">04</span>
+          <h4>链接结构清晰</h4>
+          <p>内部导航层级较浅，便于回溯与索引。</p>
+        </div>
+      </div>
+      <p>以上特点并非孤例，但在同类站点中，爱游戏在信息可读性与一致性上做出了明确的取舍。对于希望快速获取移动游戏相关内容的用户来说，这种结构本身就构成了一种隐形的导航效率。</p>
+    </section>
+
+    <!-- 第三段：使用场景与索引价值 -->
+    <section class="section-block">
+      <h2>3. 索引价值与使用场景</h2>
+      <p>从资料整理的角度看，一个稳定的信息源往往比频繁变动的平台更具长期参考价值。爱游戏适合作为以下场景的补充索引：日常浏览移动游戏动态、对比不同游戏的应用描述、以及了解中文移动游戏市场的常见分类方式。</p>
+      <p>当然，任何单一站点都无法覆盖全部信息，因此本页的定位是一份“索引式的介绍”，而非全面评测。用户可将其作为起点，结合其他可靠来源进行交叉参考。</p>
+    </section>
+
+    <!-- 引用/FAQ摘要风格段落（变体：不是FAQ，而是资料摘录） -->
+    <div class="quote-block">
+      <p>“资料索引工作的核心，不在于收录所有内容，而在于为每一次查找提供可复现的路径。爱游戏作为长期运营的站点，其路径本身即具有索引意义。”</p>
+      <p class="source">—— 信息整理笔记 · 2025</p>
+    </div>
+
+    <!-- 尾页访问提示 -->
+    <footer class="footer-note">
+      <p>如果你希望直接浏览该站点，可以前往 <a href="https://chinese-mobile-igame.com" class="inline-link">爱游戏</a> 查阅其最新内容。本页所引用的信息均基于公开资料，整理时间截至 2025 年初，后续内容请以站点实际发布为准。</p>
+      <p class="small-meta">专题索引 · 版本 2.1 · 开放归档</p>
+    </footer>
+  </div>
+</body>
+</html>
